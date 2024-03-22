@@ -29,7 +29,10 @@ def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
                     # Extract the tweet date
                     tweet_date = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S%z').date()
                     # Increment the tweet count for the corresponding date
-                    tweets_by_day[tweet_date] += 1
+                    if tweet_date in tweets_by_day:
+                        tweets_by_day[tweet_date] += 1
+                    else:
+                        tweets_by_day[tweet_date] = 1
                 
                 if prefix == 'user.username':
                     # Extract the tweet user
