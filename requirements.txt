@@ -1,1 +1,3 @@
 memory-profiler==0.61.0
+ijson==3.2.3
+emoji==2.10.1
